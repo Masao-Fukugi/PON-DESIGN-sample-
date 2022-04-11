@@ -1,0 +1,172 @@
+$sp: 375px;//スマートフォンのwidth
+$Montserrat: 'Montserrat', sans-serif;//英数字のフォント「Montserrat」
+$headerColor: #21054D;//ヘッダーの背景色
+$textColor: #333333;//テキストのカラー
+$titleColor: #391E88;//タイトルのカラー
+$white: #fff;//ヘッダー、フッター、fv、ボタンの文字色
+$buttonColor1: #7633A4;//ボタンのカラー1
+$buttonColor2: #250D65;//ボタンのカラー2
+
+@mixin sp {
+    @media (max-width: ($sp)) {
+        @content;
+    }
+}
+
+* {
+    font-size: 15px;
+    letter-spacing: 50;
+    @include sp {
+        font-size: 14px;
+    }
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 89px;
+    background-color: $headerColor;
+    &__ttl {
+        margin: 34px 0 0 30px;
+        color: $white;
+        font-size: 20px;
+        font-weight: bold;
+        font-family: $Montserrat;
+    }
+    &__nav {
+        position: absolute;
+        top: 34px;
+        left: 60vw
+    }
+    &__menu {
+        display: flex;
+        justify-content: space-between;
+        width: 35vw;
+    }
+    &__list {
+    }
+    &__link {
+        position: relative;
+        color: $white;
+        font-size: 14px;
+        font-weight: bold;
+        font-family: $Montserrat;
+        text-decoration: none;
+        &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 1px;
+            background-color: $white;
+            transition: 0.5s;
+        }
+        &:hover {
+            &::after {
+                width: 100%;
+            }
+        }    
+    }
+}
+.page {
+    &__ttl {
+        color: $white;
+        text-align: center;
+        font-size: 72px;
+        font-weight: bold;
+        font-family: $Montserrat;
+        span {
+            display: block;
+            font-size: 24px;
+            font-weight: normal;
+        }
+    }
+}
+
+.buttonBase {
+    padding: 20px 0;
+    width: 100%;
+    color: $white;
+    text-align: center;
+    border: solid 1px $white;
+    border-radius: 50px;    
+    text-decoration: none;
+}
+
+.button {
+    margin: 50px auto 0;
+    width: 220px;
+    &__link {
+        @extend .buttonBase;
+        display: inline-block;
+        position: relative;
+        background: linear-gradient(right, $buttonColor1, $buttonColor2);
+        &::after {
+            content: "MORE";
+            @extend .buttonBase;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 10;
+            background: linear-gradient(left, $buttonColor1, $buttonColor2);
+            transition: 0.3s;
+        }
+        &:hover {
+            &::after {
+                opacity: 0;
+            }
+        }
+    &--transparent {
+        @extend .buttonBase;
+        display: inline-block;
+        position: relative;
+        &::after {
+            content: "▶︎";
+            position: absolute;
+            transition: 0.3s;
+        }
+        &:hover {
+            opacity: 0.6;
+            &::after {
+
+            }
+        }
+
+        }
+    }
+}
+
+.block {
+    &__ttl {
+        color: $titleColor;
+        text-align: center;
+        font-size: 36px;
+        span {
+            
+        }
+    }
+}
+
+#top {
+    .fv {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 70px;
+        width: 100vw;
+        height: 100vh;
+        background-image: url("../img/hero.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+    .wrap {
+        margin: 0 auto 140px;
+        width: 100vw;
+    }
+
+}

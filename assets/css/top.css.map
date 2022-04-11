@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AASA,AAAA,CAAC,CAAC;EACE,SAAS,EAAE,IAAI;CAIlB;;AAVG,MAAM,EAAE,SAAS,EAAE,KAAK;EAK5B,AAAA,CAAC,CAAC;IAGM,SAAS,EAAE,IAAI;GAEtB",
+    "sources": [
+        "../scss/page/top.scss"
+    ],
+    "names": [],
+    "file": "top.css"
+}
