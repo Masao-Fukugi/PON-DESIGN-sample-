@@ -1,0 +1,24 @@
+$sp: 750px;//スマートフォンのwidth
+$textMargin: 26px;//テキストのmargin-bottom
+$subttlSize: 14px;//日本語タイトルのフォントサイズ
+$Montserrat: 'Montserrat', sans-serif;//英数字のフォント「Montserrat」
+$headerColor: #21054D;//ヘッダーの背景色
+$textColor: #333333;//テキストのカラー
+$titleColor: #391E88;//タイトルのカラー
+$white: #fff;//ヘッダー、フッター、fv、ボタンの文字色
+$buttonColor1: #7633A4;//ボタンのカラー1
+$buttonColor2: #250D65;//ボタンのカラー2
+$newsCategoryColor: #E8E8E8;//newsテキストのカテゴリーの背景色
+$contactColor: #f7f7f7;//contactブロックの背景色
+
+@mixin sp {
+    @media (max-width: ($sp)) {
+        @content;
+    }
+}
+
+* {
+    color: $textColor;
+    font-size: 15px;
+    letter-spacing: 50;
+}

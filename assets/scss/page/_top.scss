@@ -1,161 +1,9 @@
-$sp: 375px;//スマートフォンのwidth
-$Montserrat: 'Montserrat', sans-serif;//英数字のフォント「Montserrat」
-$headerColor: #21054D;//ヘッダーの背景色
-$textColor: #333333;//テキストのカラー
-$titleColor: #391E88;//タイトルのカラー
-$white: #fff;//ヘッダー、フッター、fv、ボタンの文字色
-$buttonColor1: #7633A4;//ボタンのカラー1
-$buttonColor2: #250D65;//ボタンのカラー2
-
-@mixin sp {
-    @media (max-width: ($sp)) {
-        @content;
-    }
-}
-
-* {
-    font-size: 15px;
-    letter-spacing: 50;
-    @include sp {
-        font-size: 14px;
-    }
-}
-
-.header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 89px;
-    background-color: $headerColor;
-    &__ttl {
-        margin: 34px 0 0 30px;
-        color: $white;
-        font-size: 20px;
-        font-weight: bold;
-        font-family: $Montserrat;
-    }
-    &__nav {
-        position: absolute;
-        top: 34px;
-        left: 60vw
-    }
-    &__menu {
-        display: flex;
-        justify-content: space-between;
-        width: 35vw;
-    }
-    &__list {
-    }
-    &__link {
-        position: relative;
-        color: $white;
-        font-size: 14px;
-        font-weight: bold;
-        font-family: $Montserrat;
-        text-decoration: none;
-        &::after {
-            content: "";
-            display: block;
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 0;
-            height: 1px;
-            background-color: $white;
-            transition: 0.5s;
-        }
-        &:hover {
-            &::after {
-                width: 100%;
-            }
-        }    
-    }
-}
-.page {
-    &__ttl {
-        color: $white;
-        text-align: center;
-        font-size: 72px;
-        font-weight: bold;
-        font-family: $Montserrat;
-        span {
-            display: block;
-            font-size: 24px;
-            font-weight: normal;
-        }
-    }
-}
-
-.buttonBase {
-    padding: 20px 0;
-    width: 100%;
-    color: $white;
-    text-align: center;
-    border: solid 1px $white;
-    border-radius: 50px;    
-    text-decoration: none;
-}
-
-.button {
-    margin: 50px auto 0;
-    width: 220px;
-    &__link {
-        @extend .buttonBase;
-        display: inline-block;
-        position: relative;
-        background: linear-gradient(right, $buttonColor1, $buttonColor2);
-        &::after {
-            content: "MORE";
-            @extend .buttonBase;
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: 10;
-            background: linear-gradient(left, $buttonColor1, $buttonColor2);
-            transition: 0.3s;
-        }
-        &:hover {
-            &::after {
-                opacity: 0;
-            }
-        }
-    &--transparent {
-        @extend .buttonBase;
-        display: inline-block;
-        position: relative;
-        &::after {
-            content: "▶︎";
-            position: absolute;
-            transition: 0.3s;
-        }
-        &:hover {
-            opacity: 0.6;
-            &::after {
-
-            }
-        }
-
-        }
-    }
-}
-
-.block {
-    &__ttl {
-        color: $titleColor;
-        text-align: center;
-        font-size: 36px;
-        span {
-            
-        }
-    }
-}
-
 #top {
     .fv {
         display: flex;
         justify-content: center;
         align-items: center;
+        position: relative;
         margin-bottom: 70px;
         width: 100vw;
         height: 100vh;
@@ -164,9 +12,197 @@ $buttonColor2: #250D65;//ボタンのカラー2
         background-size: cover;
         background-position: center;
     }
-    .wrap {
-        margin: 0 auto 140px;
-        width: 100vw;
+    .scrollBar {
+        position: absolute;
+        right: 30px;
+        bottom: 0;
+        &__txt {
+            color: $white;
+            text-align: center;
+            font-size: 14px;
+            writing-mode: vertical-lr;  
+            &::after {
+                content: "";
+                display: inline-block;
+                margin: 0 auto;
+                width: 1px;
+                height: 80px;
+                background-color: $white;
+                animation: slide 1.5s cubic-bezier(1, 0, 0, 1) infinite;            
+            }      
+        }
     }
+    @keyframes slide {
+        0% {
+            transform: scale(1, 0);
+            transform-origin: 0 0;
+        }
+        50% {
+            transform: scale(1, 1);
+            transform-origin: 0 0;
+        }
+        50.1% {
+            transform: scale(1, 1);
+            transform-origin: 0 100%;
+        }
+        100% {
+            transform: scale(1, 0);
+            transform-origin: 0 100%;
+        }
+    }
+    .news {
+        display: flex;
+        margin: 0 auto;
+        max-width: 917px;
+        &__ttlArea {
+            width: 170px;
+        }
+        &__ttl {
+            @extend .block__ttl;
+            text-align: left;
+            span {
+                display: block;
+                color: $titleColor;
+                font-size: $subttlSize;
+            }
+        }
+        &__menu {
+            width: 747px;
+            overflow: hidden;
+        }
+        &__list {
+            margin-bottom: 18px;
+            &:last-child {
+                margin-bottom: none;
+            }
+        }
+        &__link {
+            text-decoration: none;
+            time {
+                font-family: $Montserrat;
+            }
+            span {
+                display: inline-block;
+                padding: 5px 0;
+                margin: 0 20px;
+                width: 82px;
+                background-color: $newsCategoryColor;
+                text-align: center;
+                font-size: 12px;
+                font-family: $Montserrat;
+                border-radius: 50px;
+            }
+        }
+    }
+    .service {
+        &__menu {
+            display: flex;
+            justify-content: space-between;
+            margin: 0 auto;
+            max-width: 1110px;
+        }
+        &__list {
+            width: 350px;
+        }
+        &__link {
+            text-decoration: none;
+        }
+        &__thumbnail {
+            margin-bottom: 24px;
+            width: 100%;
+        }
+        &__ttl {
+            margin-bottom: 17px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            font-family: $Montserrat;
+        }
+        &__txt {
+            margin-bottom: $textMargin;
+        }
+    }
+    .work {
+        display: flex;
+        position: relative;
+        margin: 0 auto;
+        max-width: 1261px;
+        &__ttlArea {
+            padding: 213px 0 219px;
+            margin: 0 auto;
+            width: 511px;
+            &::after {
+                content: "";
+                display: block;
+                position: absolute;
+                left: 424px;
+                top: 0;
+                z-index: -1;
+                width: 837px;
+                height: 651px;
+                background-color: #f0f0f0;            
+            }        
+        }
+    }
+    .company {
+        position: relative;
+        padding: 144px 0 55px;
+        margin: 0 auto;
+        max-width: 1300px;
+        text-align: center;
+        background-image: url(../img/bg-circle.png), url(../img/bg-face.png);
+        background-repeat: no-repeat, no-repeat;
+        background-size: contain, contain;
+        background-position: center center, center 144px;
+        &__ttl {
+            @extend .block__ttl;
+            span {
+                margin-bottom: 40px;
+            }
+        }
+        &__goal {
+            display: inline-block;
+            position: relative;
+            margin-bottom: 40px;
+            font-size: 40px;
+            font-weight: bold;
+            span {
+                display: block;
+                position: absolute;
+                bottom: 3px;
+                z-index: -10;
+                width: 100%;
+                height: 12px;
+                background-color: #F5F534;
+            }
+        }
+    }
+    .recruit {
+        display: flex;
+        margin: 0 auto;
+        max-width: 1110px;
+        &__ttlArea {
+            padding: 69px 0;
+            width: 445px;
+            background-color: $contactColor;
+        }
+        &__photo {
+            width: 665px;
+        }
+    }
+}
+.slider {
+    margin-top: 60px;
+    width: 750px;
+    &__list {
+        width: 100%;
+    }
+}
+.slick-prev:before,
+.slick-next:before {
+    color: #000;
+}
 
+.break {
+    display: none;
 }

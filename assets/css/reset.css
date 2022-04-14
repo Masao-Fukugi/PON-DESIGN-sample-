@@ -220,11 +220,11 @@ div {zoom:1;/*for IE 5.5-7*/}
 **************************************** */
 p,li,dt,dd,th,td,figcaption {
   font-size:16px;
-  font-family: “メイリオ“,”Meiryo”,“ＭＳ Ｐゴシック“,”Hiragino Kaku Gothic Pro”,“ヒラギノ角ゴ Pro W3”,sans-serif !important;
+  font-family: “ヒラギノ角ゴ Pro W3”,“メイリオ“,”Meiryo”,“ＭＳ Ｐゴシック“,”Hiragino Kaku Gothic Pro”,sans-serif !important;
   color:#333;
   
 }
 h1,h2,h3,h4,h5 {
   clear:both;
-  font-family: “メイリオ“,”Meiryo”,“ＭＳ Ｐゴシック“,”Hiragino Kaku Gothic Pro”,“ヒラギノ角ゴ Pro W3”,sans-serif !important;
+  font-family: “ヒラギノ角ゴ Pro W3”,“メイリオ“,”Meiryo”,“ＭＳ Ｐゴシック“,”Hiragino Kaku Gothic Pro”,sans-serif;
 }

@@ -1,0 +1,105 @@
+.page {
+    &__ttl {
+        color: $white;
+        text-align: center;
+        font-size: 72px;
+        font-weight: bold;
+        font-family: $Montserrat;
+        span {
+            display: block;
+            margin: 20px 0 50px;
+            color: $white;
+            font-size: 24px;
+            font-weight: normal;
+            font-family: “ヒラギノ角ゴ Pro W3”,“メイリオ“,”Meiryo”,“ＭＳ Ｐゴシック“,”Hiragino Kaku Gothic Pro”,sans-serif !important;
+        }
+    }
+}
+
+.buttonBase {
+    display: inline-block;
+    position: relative;
+    padding: 18px 0;
+    width: 100%;
+    color: $white;
+    text-align: center;
+    font-family: $Montserrat;
+    border-radius: 50px;    
+    text-decoration: none;
+    transition: 0.3s;
+}
+.buttonAfterBase {
+    content: "▶︎";
+    position: absolute;
+    right: 30px;
+    font-size: 12px;
+}
+
+.button {
+    margin: 0 auto;
+    width: 220px;
+    &__contact {
+        @extend .buttonBase;
+        border: solid 1px $white;
+        box-sizing: border-box;
+        &::after {
+            @extend .buttonAfterBase;
+            font-size: 12px;
+            transition: 0.3s;
+        }
+        &:hover {
+            opacity: 0.6;
+            &::after {
+                right: 20px;
+            }
+        }
+    }
+    &__link {
+        @extend .buttonBase;
+        font-size: $subttlSize;
+        background: linear-gradient(left, $buttonColor1, $buttonColor2 50%, $buttonColor1 100%);
+        background-size: 200%;
+        &::after {
+            @extend .buttonAfterBase;
+        }
+        &:hover {
+            background-position-x: 100%; 
+        }
+    }
+}
+
+.block {
+    &__ttl {
+        color: $titleColor;
+        font-weight: bold;
+        font-family: $Montserrat;
+        text-align: center;
+        font-size: 36px;
+        span {
+            display: block;
+            margin-bottom: $textMargin;
+            color: $titleColor;
+            font-size: $subttlSize;
+            font-family: “ヒラギノ角ゴ Pro W3”,“メイリオ“,”Meiryo”,“ＭＳ Ｐゴシック“,”Hiragino Kaku Gothic Pro”,sans-serif !important;
+        }
+    }
+    &__txt {
+        margin-bottom: $textMargin;
+        text-align: center;
+        font-size: 15px;
+    }
+    &__img {
+        width: 100%;
+    }
+}
+
+.wrap {
+    margin: 0 auto 140px;
+    width: 100vw;
+    &--last {
+        padding: 80px 0;
+        margin: 0 auto;
+        width: 100vw;
+        background-color: $contactColor;
+    }
+}
