@@ -121,6 +121,10 @@
                 font-family: $Montserrat;
                 border-radius: 50px;
             }
+            &:hover {
+                text-decoration: underline;
+                opacity: 0.7;
+            }
         }
     }
     .service {
@@ -136,6 +140,10 @@
         }
         &__list {
             width: 350px;
+            transition: 0.3s;
+            &:hover {
+                opacity: 0.7;
+            }
             @include sp {
                 width: 100%;
             }
