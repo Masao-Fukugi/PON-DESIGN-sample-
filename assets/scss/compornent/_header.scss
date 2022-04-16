@@ -19,59 +19,94 @@
     }
     &__ttl {
         margin: 34px 0 0 30px;
+        @include sp {
+          margin: 20px 0 0 $spPadding;
+        }
         a {
             color: $white;
             text-decoration: none;
             font-size: 20px;
             font-weight: bold;
             font-family: $Montserrat;
+            @include sp {
+              font-size: 18px;
+            }
         }
     }
     &__hamburger {
         position: absolute;
         top: 24px;
-        right: 20px;
+        right: $spPadding;
         width: 34px;
         height: 100%;
     }
     &__nav {
-        position: absolute;
-        top: 34px;
-        right: 30px;
-        @include sp {
-            display: none;
-        }
+      @include sp {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: -10;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(top, $hamburgerColor1, $hamburgerColor2);
+        opacity: 0;
+        transition: 0.4s;
+      }
     }
     &__menu {
         display: flex;
         justify-content: space-between;
+        position: absolute;
+        top: 34px;
+        right: 30px;
         width: 36vw;
+        @include sp {
+          display: block;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          z-index: 100;
+          transform: translate(-50%, -50%);      
+        }
+    }
+    &__list {
+      @include sp {
+        margin-bottom: 20px;
+        text-align: center;
+      }
     }
     &__link {
-        position: relative;
-        color: $white;
-        font-size: 14px;
-        font-family: $Montserrat;
-        text-decoration: none;
-        &::after {
-            content: "";
-            display: block;
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 0;
-            height: 1px;
-            background-color: $white;
-            transition: 0.5s;
+      position: relative;
+      color: $white;
+      font-size: 14px;
+      font-family: $Montserrat;
+      text-decoration: none;
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        height: 1px;
+        background-color: $white;
+        transition: 0.5s;
+      }
+      &:hover {
+       &::after {
+          width: 100%;
         }
-        &:hover {
-            &::after {
-                width: 100%;
-            }
-        }    
+      }
+      @include sp {
+        font-size: 15px;
+      }
     }
 }
-
+.scroll-in {
+  opacity: 1;
+  transform: translate(0, 0);
+  transition: 0.3s;
+}
 
 /*ハンバーガーメニュー*/
 .hamburger {
@@ -123,6 +158,8 @@
     top: -10px;
     transform: rotate(-45deg);
   }
-.header__nav.active {
-    display: block;
-}
+  .header__nav.active {
+    z-index: 10;
+    opacity: 1;
+    transition: 0.4s;
+  }

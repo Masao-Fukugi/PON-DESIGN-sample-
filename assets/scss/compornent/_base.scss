@@ -1,5 +1,7 @@
 $sp: 750px;//スマートフォンのwidth
 $textMargin: 26px;//テキストのmargin-bottom
+$textMarginSp: 40px;//スマートフォン画面のテキストのmargin-bottom
+$spPadding: 20px;//スマートフォン画面での左右両端の余白
 $subttlSize: 14px;//日本語タイトルのフォントサイズ
 $Montserrat: 'Montserrat', sans-serif;//英数字のフォント「Montserrat」
 $headerColor: #21054D;//ヘッダーの背景色
@@ -10,6 +12,8 @@ $buttonColor1: #7633A4;//ボタンのカラー1
 $buttonColor2: #250D65;//ボタンのカラー2
 $newsCategoryColor: #E8E8E8;//newsテキストのカテゴリーの背景色
 $contactColor: #f7f7f7;//contactブロックの背景色
+$hamburgerColor1: #642390;//ハンバーガーメニューの背景色1
+$hamburgerColor2: #19074A;//ハンバーガーメニューの背景色2
 
 @mixin sp {
     @media (max-width: ($sp)) {
@@ -20,5 +24,9 @@ $contactColor: #f7f7f7;//contactブロックの背景色
 * {
     color: $textColor;
     font-size: 15px;
-    letter-spacing: 50;
+    letter-spacing: 0.05em;
+    line-height: 1.8em;
+    @include sp {
+        font-size: 14px;
+    }
 }
