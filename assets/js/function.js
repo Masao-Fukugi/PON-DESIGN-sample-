@@ -17,6 +17,16 @@ jQuery(function ($) {
     $('.hamburger').on('click', function () {
         $(this).toggleClass('active');
         $('.header__nav').toggleClass('active');
+        const fade = document.getElementById("nav");
+        fade.style.display ="none";
+        if(fade.style.display =="none"){
+          fade.style.display ="block";
+          $('.header__nav').fadeIn();
+        }
+        else {
+          $('.header__nav').fadeOut();
+          fade.style.display ="none";
+        }
     })
     $('a[href^="#top"]').click(function(){
         let speed = 500;
@@ -28,7 +38,9 @@ jQuery(function ($) {
     });
 });
 $('.slider').slick({
-    autoplay: true,
-    autoplaySpeed: 5000,
-    dots: true,
+  prevArrow:'<img src="/assets/img/arrow-prev.png" alt="" class="prev_icon">',
+  nextArrow:'<img src="/assets/img/arrow-next.png" alt="" class="next_icon">',
+  autoplay: true,
+  autoplaySpeed: 5000,
+  dots: true,
 });
