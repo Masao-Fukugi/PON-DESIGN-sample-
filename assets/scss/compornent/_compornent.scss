@@ -16,6 +16,25 @@
             font-size: $subttlSize;
             font-family: “ヒラギノ角ゴ Pro W3”,“メイリオ“,”Meiryo”,“ＭＳ Ｐゴシック“,”Hiragino Kaku Gothic Pro”,sans-serif !important;
         }
+        &--white {
+            color: $white;
+            text-align: center;
+            font-weight: bold;
+            font-family: $Montserrat;
+            font-size: 36px;
+            line-height: 1em;
+            @include sp {
+                font-size: 30px;
+            }
+            span {
+                display: block;
+                margin-bottom: $textMargin;
+                color: $white;
+                font-size: $subttlSize;
+                font-family: “ヒラギノ角ゴ Pro W3”,“メイリオ“,”Meiryo”,“ＭＳ Ｐゴシック“,”Hiragino Kaku Gothic Pro”,sans-serif !important;
+            }
+    
+        }
     }
     &__txt {
         margin-bottom: $textMargin;
