@@ -4,7 +4,7 @@ jQuery(function ($) {
       $(fadeIn).each(function () {
         var scroll = $(window).scrollTop(); 
         var windowHeight = $(window).height();
-        if (scroll > windowHeight - 89) {
+        if (scroll > windowHeight - 90) {
           $(this).addClass("scroll-in");
           $('.scroll').addClass("scroll-in");
         }
@@ -14,19 +14,9 @@ jQuery(function ($) {
         }
       });
     });
-    $('.hamburger').on('click', function () {
-        $(this).toggleClass('active');
-        $('.header__nav').toggleClass('active');
-        const fade = document.getElementById("nav");
-        fade.style.display ="none";
-        if(fade.style.display =="none"){
-          fade.style.display ="block";
-          $('.header__nav').fadeIn();
-        }
-        else {
-          $('.header__nav').fadeOut();
-          fade.style.display ="none";
-        }
+    $('.header__hamburger').on('click', function () {
+      $(this).toggleClass('active');
+      $('.header__nav').toggleClass('active');
     })
     $('a[href^="#top"]').click(function(){
         let speed = 500;

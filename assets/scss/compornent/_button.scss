@@ -1,0 +1,57 @@
+.buttonBase {
+    position: relative;
+    display: inline-block;
+    padding: 18px 0;
+    width: 100%;
+    color: $white;
+    text-align: center;
+    font-family: $Montserrat;
+    border-radius: 50px;    
+    text-decoration: none;
+    transition: 0.3s;
+}
+.buttonAfterBase {
+    content: "▶︎";
+    position: absolute;
+    right: 30px;
+    font-size: 12px;
+}
+.c-Button {
+    margin: 0 auto;
+    width: 220px;
+    @include sp {
+        margin-left: 10px;
+    }
+    &__link {
+        @extend .buttonBase;
+        border: solid 1px $white;
+        box-sizing: border-box;
+        &::after {
+            @extend .buttonAfterBase;
+            font-size: 12px;
+            transition: 0.3s;
+        }
+        &:hover {
+            opacity: 0.8;
+            &::after {
+                right: 20px;
+            }
+        }
+    }
+}
+.button {
+    margin: 0 auto;
+    width: 220px;
+    &__link {
+        @extend .buttonBase;
+        font-size: $subttlSize;
+        background: linear-gradient(left, $buttonColor1, $buttonColor2 50%, $buttonColor1 100%);
+        background-size: 200%;
+        &::after {
+            @extend .buttonAfterBase;
+        }
+        &:hover {
+            background-position-x: 100%; 
+        }
+    }
+}

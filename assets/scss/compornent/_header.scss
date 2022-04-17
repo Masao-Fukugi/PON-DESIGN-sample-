@@ -1,146 +1,138 @@
 .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 30px;
+  width: calc(100vw - 60px);
+  height: 90px;
+  @include sp {
+    padding: 0 $spPadding;
+    width: calc(100vw - #{$spPadding} * 2);
+    height: 70px;
+  }
+  &__back {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 10;
-    padding: 0 30px;
-    width: calc(100vw - 60px);
-    height: 90px;
+    z-index: -10;
+    width: 100vw;
+    height: 89px;
+    background-color: $headerColor;
+    opacity: 0;
+    transition-duration: 500ms;
+    transition-property: opacity, transform;
     @include sp {
-     padding: 0 $spPadding;
-      width: calc(100vw - #{$spPadding} * 2);
       height: 70px;
     }
-    &__back {
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: -10;
-        width: 100vw;
-        height: 89px;
-        background-color: $headerColor;
-        opacity: 0;
-        transition-duration: 500ms;
-        transition-property: opacity, transform;
-        @include sp {
-          height: 70px;
-        }
-    }
-    &__ttl {
-        a {
-            color: $white;
-            text-decoration: none;
-            font-size: 20px;
-            font-weight: bold;
-            font-family: $Montserrat;
-            @include sp {
-              font-size: 18px;
-            }
-        }
-    }
-    &__hamburger {
-      width: 30px;
-    }
-    &__nav {
-      width: 40vw;
-      @include sp {
-        position: fixed;
-        left: 0;
-        top: 0;
-        z-index: -100;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(top, $hamburgerColor1, $hamburgerColor2);
-        visibility: hidden;
-        opacity: 0;
-        transition: 0.3s;
-      }
-    }
-    &__menu {
-        display: flex;
-        justify-content: space-between;
-        width: 100%;
-        @include sp {
-          display: block;
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          z-index: 100;
-          transform: translate(-50%, -50%);      
-        }
-    }
-    &__list {
-      @include sp {
-        margin-bottom: 20px;
-        text-align: center;
-      }
-    }
-    &__link {
-      position: relative;
+  }
+  &__ttl {
+    a {
       color: $white;
-      font-size: 14px;
-      font-family: $Montserrat;
       text-decoration: none;
-      &::after {
-        content: "";
-        display: block;
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        width: 0;
-        height: 1px;
-        background-color: $white;
-        transition: 0.5s;
-      }
-      &:hover {
-       &::after {
-          width: 100%;
-        }
-      }
+      font-size: 20px;
+      font-weight: bold;
+      font-family: $Montserrat;
       @include sp {
-        font-size: 15px;
+        font-size: 18px;
       }
     }
+  }
+  &__hamburger {
+    z-index: 9999;
+    display: none;
+    width: 30px;
+    border-color: $white;
+    @include sp {
+      display: block;
+    }
+    span {
+      position: relative;
+      display: block;
+      width: 100%;
+      height: 2px;
+      background-color: $white;
+      transition: ease .4s;
+      &:nth-child(1) {
+        top: 0;
+      }
+      &:nth-child(2) {
+        margin: 10px 0;
+      }
+      &:nth-child(3) {
+        top: 0;
+      }
+    }      
+  }
+  &__nav {
+    width: 40vw;
+    @include sp {
+      position: fixed;
+      left: 0;
+      top: 0;
+      z-index: -100;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(top, $hamburgerColor1, $hamburgerColor2);
+      visibility: hidden;
+      opacity: 0;
+      transition: 0.3s;
+    }
+  }
+  &__menu {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      @include sp {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: 100;
+        display: block;
+        transform: translate(-50%, -50%);      
+      }
+  }
+  &__list {
+    @include sp {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+  }
+  &__link {
+    position: relative;
+    color: $white;
+    font-size: 14px;
+    font-family: $Montserrat;
+    text-decoration: none;
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      display: block;
+      width: 0;
+      height: 1px;
+      background-color: $white;
+      transition: 0.5s;
+    }
+    &:hover {
+      &::after {
+        width: 100%;
+      }
+    }
+    @include sp {
+      font-size: 15px;
+    }
+  }
 }
 .scroll-in {
   opacity: 1;
   transform: translate(0, 0);
   transition: 0.3s;
 }
-
-/*ハンバーガーメニュー*/
-.hamburger {
-    display: none;
-    z-index: 9999;
-    border-color: $white;
-    @include sp {
-        display: block;
-    }
-}
-.hamburger span {
-  display: block;
-  position: relative;
-  width: 100%;
-  height: 2px;
-  background-color: $white;
-  transition: ease .4s;
-}
-  
-.hamburger span:nth-child(1) {
-  top: 0;
-}
-
-.hamburger span:nth-child(2) {
-  margin: 10px 0;
-}
-
-.hamburger span:nth-child(3) {
-  top: 0;
-}
-
 
 /* ハンバーガーメニュークリック後のスタイル */
 .header__nav.active {

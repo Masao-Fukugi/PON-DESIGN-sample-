@@ -1,0 +1,58 @@
+.slick-dots {
+    right: 0!important;
+    bottom: 30px!important;
+    width: 48px!important;
+    @include sp {
+        bottom: -25px!important;
+    }
+    li {
+        margin: 0 4px!important;
+        width: 8px!important;
+        button {
+            width: 100%!important;
+            &::before {
+                width: 100%!important;
+                font-size: 8px!important;
+            }
+        }
+    }
+}
+.slick-prev {
+    left: 25px!important;
+    z-index: 10!important;
+}
+.slick-next {
+    right: 25px!important;
+}
+.slick-prev:before,
+.slick-next:before {
+    color: $textColor!important;
+    font-size: 30px!important;
+}
+.slick-dotted.slick-slider {
+    @include sp {
+    margin-bottom: 0!important;
+    }
+}
+.prev_icon{
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    z-index: 1;
+    transform: translate(0,-50%);
+    width: 30px;
+    &:hover {
+        cursor: pointer;
+    } 
+}
+.next_icon{
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    z-index: 1;
+    transform: translate(0,-50%);
+    width: 30px;
+    &:hover {
+        cursor: pointer;
+    } 
+}
