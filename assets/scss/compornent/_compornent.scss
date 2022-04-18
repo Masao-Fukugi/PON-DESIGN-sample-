@@ -44,7 +44,51 @@
         width: 100%;
     }
 }
-
+.fv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 90px;
+    width: 100vw;
+    height: 150px;
+    background-image: url("../img/hero.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    @include sp {
+        padding: 90px $spPadding 0;
+        width: calc(100vw - #{$spPadding} * 2);
+        height: 120px;
+    }
+}
+.breadcrumb {
+    padding: 15px 0;
+    margin-bottom: 60px;
+    width: 100vw;
+    background-color: $contactColor;
+    @include sp {
+        padding: 5px 0;
+    }
+    &__menu {
+        display: flex;
+        align-items: center;
+        margin-left: 165px;
+        @include sp {
+            margin-left: $spPadding;
+        }
+    }
+    &__list {
+        font-size: 12px;
+        a {
+            font-size: 12px;
+            text-decoration: none;
+            &:hover {
+                text-decoration: underline;
+                opacity: 0.8;
+            }
+        }
+    }
+}
 .wrap {
     margin: 0 auto 140px;
     width: 100vw;
