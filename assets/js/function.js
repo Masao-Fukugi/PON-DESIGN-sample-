@@ -3,8 +3,8 @@ jQuery(function ($) {
     $(window).scroll(function () {
       $(fadeIn).each(function () {
         var scroll = $(window).scrollTop(); 
-        var windowHeight = $(window).height();
-        if (scroll > windowHeight - 90) {
+        var windowHeight = $('.fv').height();
+        if (scroll > windowHeight) {
           $(this).addClass("scroll-in");
           $('.scroll').addClass("scroll-in");
         }

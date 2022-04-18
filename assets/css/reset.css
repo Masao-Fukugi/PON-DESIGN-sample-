@@ -220,7 +220,7 @@ div {zoom:1;/*for IE 5.5-7*/}
 **************************************** */
 p,li,dt,dd,th,td,figcaption {
 
-  font-family: “ヒラギノ角ゴ Pro W3”,“メイリオ“,”Meiryo”,“ＭＳ Ｐゴシック“,”Hiragino Kaku Gothic Pro”,sans-serif !important;
+  font-family: “ヒラギノ角ゴ Pro W3”,“メイリオ“,”Meiryo”,“ＭＳ Ｐゴシック“,”Hiragino Kaku Gothic Pro”,sans-serif ;
   color:#333;
   
 }

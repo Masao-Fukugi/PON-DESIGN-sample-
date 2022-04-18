@@ -119,6 +119,7 @@
             }
         }
         &__list {
+            display: flex;
             margin-bottom: 15px;
             &:last-child {
                 margin-bottom: none;
@@ -128,8 +129,6 @@
             }
         }
         &__link {
-            display: flex;
-            align-items: start;
             text-decoration: none;
             time {
                 font-family: $Montserrat;
@@ -138,8 +137,6 @@
                 display: inline-block;
                 margin: 0 20px;
                 width: 82px;
-                height: 22px;
-                line-height: 22px;
                 background-color: $newsCategoryColor;
                 text-align: center;
                 font-size: 12px;
@@ -147,15 +144,23 @@
                 font-family: $Montserrat;
                 border-radius: 50px;
             }
+            p {
+                float: right;
+                width: 700px;
+                &::after {
+                    content: "";
+                    display: block;
+                    clear: both;
+                }
+                @include sp {
+                    display: block;
+                    float: none;
+                    width: 100%;
+                }
+            }
             &:hover {
                 text-decoration: underline;
                 opacity: 0.7;
-            }
-            p {
-                display: inline;
-                @include sp {
-                    display: block;
-                }
             }
         }
     }
