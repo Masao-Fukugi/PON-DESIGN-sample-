@@ -1,0 +1,33 @@
+.breadcrumb {
+    padding: 15px 0;
+    margin-bottom: 60px;
+    width: 100vw;
+    background-color: $contactColor;
+    @include sp {
+        padding: 5px 0;
+    }
+    &__menu {
+        display: flex;
+        align-items: center;
+        margin-left: 165px;
+        @include sp {
+            margin: 0 $spPadding;
+            width: calc(100vw - $spPadding * 2);
+            overflow-x: hidden;
+        }
+    }
+    &__list {
+        a {
+            font-size: 12px;
+            text-decoration: none;
+            &:hover {
+                text-decoration: underline;
+                opacity: 0.8;
+            }
+        }
+        p {
+            width: 700px;
+            font-size: 12px;
+        }
+    }
+}
