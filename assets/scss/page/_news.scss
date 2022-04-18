@@ -53,96 +53,13 @@
         &__menu {
             width: 100%;
         }
-        &__list {
-            display: flex;
-            margin-bottom: 15px;
-            &:last-child {
-                margin-bottom: none;
-            }
-            @include sp {
-                margin-bottom: 40px;
-            }
-        }
         &__link {
-            text-decoration: none;
-            time {
-                font-family: $Montserrat;
-            }
-            span {
-                display: inline-block;
-                margin: 0 20px;
-                width: 82px;
-                background-color: $newsCategoryColor;
-                text-align: center;
-                font-size: 12px;
-                font-weight: bold;
-                font-family: $Montserrat;
-                border-radius: 50px;
-            }
             p {
-                float: right;
                 width: 700px;
-                &::after {
-                    content: "";
-                    display: block;
-                    clear: both;
-                }
                 @include sp {
-                    display: block;
-                    float: none;
                     width: 100%;
                 }
             }
-            &:hover {
-                text-decoration: underline;
-                opacity: 0.7;
-            }
         }
-    }
-    .pagenation {
-        &__menu {
-            display: flex;
-            justify-content: space-between;
-            margin: 0 auto;
-            width: 155px;    
-        }
-        &__list {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 45px;
-            height: 45px;
-            color: $white;
-            background: linear-gradient(top, $hamburgerColor1, $hamburgerColor2);
-            font-size: 20px;
-            font-family: $Montserrat;
-            border-radius: 50%;
-            &--now {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                width: 45px;
-                height: 45px;
-                color: #4F31A5;
-                background-color: #F1EBF8;
-                font-size: 20px;
-                font-family: $Montserrat;
-                border-radius: 50%;
-            }
-            &:hover {
-                opacity: 0.8;
-            }        
-            a {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                width: 100%;
-                height: 100%;
-                color: $white;
-                font-size: 20px;
-                font-family: $Montserrat;
-                text-decoration: none;
-            }
-        }
-    }
+   }
 }

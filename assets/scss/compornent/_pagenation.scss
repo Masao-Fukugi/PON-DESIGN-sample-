@@ -1,0 +1,46 @@
+.pagenation {
+    &__menu {
+        display: flex;
+        justify-content: space-between;
+        margin: 0 auto;
+        width: 155px;    
+    }
+    &__list {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 45px;
+        height: 45px;
+        color: $white;
+        background: linear-gradient(top, $hamburgerColor1, $hamburgerColor2);
+        font-size: 20px;
+        font-family: $Montserrat;
+        border-radius: 50%;
+        &--now {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 45px;
+            height: 45px;
+            color: #4F31A5;
+            background-color: #F1EBF8;
+            font-size: 20px;
+            font-family: $Montserrat;
+            border-radius: 50%;
+        }
+        &:hover {
+            opacity: 0.8;
+        }        
+        a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            color: $white;
+            font-size: 20px;
+            font-family: $Montserrat;
+            text-decoration: none;
+        }
+    }
+}
