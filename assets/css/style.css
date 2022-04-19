@@ -215,18 +215,12 @@
 @media (max-width: 750px) {
   .breadcrumb {
     padding: 5px 0;
+    margin-bottom: 40px;
   }
 }
 
 .breadcrumb__menu {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
+  position: relative;
   margin-left: 165px;
 }
 
@@ -234,7 +228,38 @@
   .breadcrumb__menu {
     margin: 0 20px;
     width: calc(100vw - $spPadding * 2);
-    overflow-x: hidden;
+  }
+}
+
+.breadcrumb__list {
+  display: inline-block;
+}
+
+.breadcrumb__list::after {
+  content: ">";
+  margin: 0 5px;
+}
+
+.breadcrumb__list:last-child {
+  font-size: 12px;
+}
+
+.breadcrumb__list:last-child::after {
+  content: "";
+}
+
+@media (max-width: 750px) {
+  .breadcrumb__list:last-child {
+    position: absolute;
+    top: 50%;
+    display: inline-block;
+    width: 230px;
+    font-size: 11px;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }
 
@@ -248,9 +273,10 @@
   opacity: 0.8;
 }
 
-.breadcrumb__list p {
-  width: 700px;
-  font-size: 12px;
+@media (max-width: 750px) {
+  .breadcrumb__list a {
+    font-size: 11px;
+  }
 }
 
 .buttonBase, .c-Button__link, .button__link {
@@ -1321,6 +1347,12 @@
   font-family: "Montserrat", sans-serif;
 }
 
+@media (max-width: 750px) {
+  #single .single__ttl {
+    font-size: 22px;
+  }
+}
+
 #single .single__txt {
   margin-bottom: 30px;
 }
@@ -1347,6 +1379,7 @@
 }
 
 #single .single article h4 {
+  display: inline-block;
   padding-left: 15px;
   margin: 30px 0 20px;
   border-left: solid 6px #391E88;
@@ -1356,11 +1389,13 @@
 
 @media (max-width: 750px) {
   #single .single article h4 {
+    margin-top: 10px;
     font-size: 18px;
   }
 }
 
 #single .single article h5 {
+  display: inline-block;
   margin: 10px 0;
   font-size: 18px;
   font-weight: bold;
@@ -1373,6 +1408,7 @@
 }
 
 #single .single article p {
+  display: inline-block;
   margin-bottom: 30px;
 }
 

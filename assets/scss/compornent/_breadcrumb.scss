@@ -5,18 +5,39 @@
     background-color: $contactColor;
     @include sp {
         padding: 5px 0;
+        margin-bottom: 40px;
     }
     &__menu {
-        display: flex;
-        align-items: center;
+        position: relative;
         margin-left: 165px;
         @include sp {
             margin: 0 $spPadding;
             width: calc(100vw - $spPadding * 2);
-            overflow-x: hidden;
         }
     }
     &__list {
+        display: inline-block;
+        &::after {
+            content: ">";
+            margin: 0 5px;
+        }
+        &:last-child {
+            font-size: 12px;        
+            &::after {
+                content: "";
+            }
+            @include sp {
+                position: absolute;
+                top: 50%;
+                display: inline-block;
+                width: 230px;
+                font-size: 11px;
+                transform: translateY(-50%);
+                white-space: nowrap;  
+                overflow: hidden;  
+                text-overflow: ellipsis;              
+            }
+        }
         a {
             font-size: 12px;
             text-decoration: none;
@@ -24,10 +45,9 @@
                 text-decoration: underline;
                 opacity: 0.8;
             }
+            @include sp {
+                font-size: 11px;
+            }
         }
-        p {
-            width: 700px;
-            font-size: 12px;
-        }
-    }
+   }
 }
