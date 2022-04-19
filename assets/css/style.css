@@ -206,33 +206,33 @@
 }
 
 .breadcrumb {
-  padding: 15px 0;
   margin-bottom: 60px;
   width: 100vw;
+  height: 45px;
   background-color: #f7f7f7;
 }
 
 @media (max-width: 750px) {
   .breadcrumb {
-    padding: 5px 0;
     margin-bottom: 40px;
+    height: 25px;
   }
 }
 
 .breadcrumb__menu {
-  position: relative;
+  padding: 8px 0;
   margin-left: 165px;
 }
 
 @media (max-width: 750px) {
   .breadcrumb__menu {
+    padding: 0;
     margin: 0 20px;
-    width: calc(100vw - $spPadding * 2);
   }
 }
 
 .breadcrumb__list {
-  display: inline-block;
+  float: left;
 }
 
 .breadcrumb__list::after {
@@ -241,7 +241,9 @@
 }
 
 .breadcrumb__list:last-child {
+  margin-top: 4px;
   font-size: 12px;
+  font-family: "Montserrat", sans-serif;
 }
 
 .breadcrumb__list:last-child::after {
@@ -250,13 +252,8 @@
 
 @media (max-width: 750px) {
   .breadcrumb__list:last-child {
-    position: absolute;
-    top: 50%;
-    display: inline-block;
     width: 230px;
     font-size: 11px;
-    -webkit-transform: translateY(-50%);
-            transform: translateY(-50%);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -265,6 +262,7 @@
 
 .breadcrumb__list a {
   font-size: 12px;
+  font-family: "Montserrat", sans-serif;
   text-decoration: none;
 }
 
